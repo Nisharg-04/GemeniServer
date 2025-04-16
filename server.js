@@ -22,6 +22,11 @@ const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY,
 });
 
+app.get("/", (req, res) => {
+    res.send("Gemini API is running");
+}
+);
+
 // Endpoint to handle AI prompt
 app.post("/api/analyze", async (req, res) => {
     const { prompt } = req.body;
